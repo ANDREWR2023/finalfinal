@@ -256,7 +256,7 @@ class _CreateState extends State<Create> {
                     ),
                   ),
                   child: Text(
-                    'Button 1',
+                    'Client',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
@@ -274,7 +274,7 @@ class _CreateState extends State<Create> {
                     ),
                   ),
                   child: Text(
-                    'Button 2',
+                    'Developer',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
@@ -292,7 +292,7 @@ class _CreateState extends State<Create> {
                     ),
                   ),
                   child: Text(
-                    'Button 3',
+                    'Admin',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
@@ -323,13 +323,15 @@ class _CreateState extends State<Create> {
                             title: username,
                           )));
                 } else if (a.any((row) => row.contains(1))) {
-                  print('fail');
-                  hasFailed = 'This is a dev login';
-                  setState(() {});
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => DevScreen(
+                            title: username,
+                          )));
                 } else if (a.any((row) => row.contains(0))) {
-                  print('fail');
-                  hasFailed = 'This is a normal client login';
-                  setState(() {});
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => ClientScreen(
+                            title: username,
+                          )));
                 } else {
                   print('fail');
                   hasFailed =
