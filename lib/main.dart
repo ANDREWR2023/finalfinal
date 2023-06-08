@@ -200,7 +200,6 @@ class Create extends StatefulWidget {
 }
 
 class _CreateState extends State<Create> {
-  String username = '';
   String password = '';
   String hasFailed = '';
   int _selectedIndex = 0;
